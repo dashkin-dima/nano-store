@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createStore, useStore } from "../../../lib/index";
+import { createStore, useStore } from "liten-store";
 
 const counterStore = createStore(0);
 
@@ -69,13 +69,6 @@ const Second = () => {
         }}
       >
         +
-      </button>
-      <button
-        onClick={() => {
-          setValue(2);
-        }}
-      >
-        set 2
       </button>
     </div>
   );

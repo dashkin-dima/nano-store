@@ -71,13 +71,6 @@ const Second = () => {
       >
         +
       </button>
-      <button
-        onClick={() => {
-          setValue(2);
-        }}
-      >
-        set 2
-      </button>
     </div>
   );
 };
