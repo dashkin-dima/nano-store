@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { createStore, useStore } from "./../../../lib/index";
-
-const counterStore = createStore(0);
+import { useState } from "react";
+import { createStore, useStore } from "liten-store";
+type TPages = "first" | "second";
 
 function App() {
-  const [page, setPage] = useState("first");
+  const [page, setPage] = useState<TPages>("first");
 
   const changePage = () => {
     if (page === "first") {
@@ -24,23 +23,25 @@ function App() {
   );
 }
 
+const counterStore = createStore(0);
+
 const First = () => {
-  const [value, setValue] = useStore(counterStore);
+  const [value, setValue] = useStore<number>(counterStore);
 
   return (
     <div>
       first
-      <div>{value}</div>
+      <div>counter: {value}</div>
       <button
         onClick={() => {
-          setValue((prev) => prev - 1);
+          setValue((prev: any) => prev - 1);
         }}
       >
         -
       </button>
       <button
         onClick={() => {
-          setValue((prev) => prev + 1);
+          setValue((prev: any) => prev + 1);
         }}
       >
         +
@@ -55,17 +56,17 @@ const Second = () => {
   return (
     <div>
       second
-      <div>{value}</div>
+      <div>counter:{value}</div>
       <button
         onClick={() => {
-          setValue((prev) => prev - 1);
+          setValue((prev: any) => prev - 1);
         }}
       >
         -
       </button>
       <button
         onClick={() => {
-          setValue((prev) => prev + 1);
+          setValue((prev: any) => prev + 1);
         }}
       >
         +
