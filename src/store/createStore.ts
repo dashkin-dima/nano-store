@@ -16,6 +16,9 @@ export const createStore = <T>(initialState: T): ReturnType<TCreateStore<T>> => 
   };
 
   const subsribe = (callback: TCallback<T>) => {
+    // init value, when subsribe
+    callback(state);
+
     callbacks.add(callback);
 
     return () => {
