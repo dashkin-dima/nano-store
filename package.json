@@ -1,6 +1,6 @@
 {
   "name": "liten-store",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "little store for react",
   "main": "lib/index.js",
   "files": [
